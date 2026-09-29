@@ -203,13 +203,14 @@
     <div class="section-head"><div><p class="eyebrow" data-i18n="ctp_eyebrow">Contact</p><h2 class="h2" data-i18n="ct_title">Vous avez un projet ? Parlons-en.</h2></div></div>
     <div class="contact-grid">
       <form id="contact-form">
-        <div class="form-field"><label data-i18n="f_name">Nom complet</label><input required type="text" id="f_name"></div>
-        <div class="form-field"><label data-i18n="f_email">Email</label><input required type="email" id="f_email"></div>
+        <div class="form-field"><label data-i18n="f_name">Nom complet</label><input required type="text" id="f_name" name="name"></div>
+        <div class="form-field"><label data-i18n="f_email">Email</label><input required type="email" id="f_email" name="email"></div>
         <div class="form-field"><label data-i18n="f_type">Type de projet</label>
-          <select id="f_type"><option data-i18n="d1_t">Bâtiment</option><option data-i18n="d2_t">Routes & Voiries</option><option data-i18n="d3_t">Génie civil</option><option data-i18n="d4_t">Hydraulique & assainissement</option><option data-i18n="d5_t">Terrassement & érosion</option><option data-i18n="d6_t">Bureau d'études</option></select>
+          <select id="f_type" name="project_type"><option data-i18n="d1_t">Bâtiment</option><option data-i18n="d2_t">Routes & Voiries</option><option data-i18n="d3_t">Génie civil</option><option data-i18n="d4_t">Hydraulique & assainissement</option><option data-i18n="d5_t">Terrassement & érosion</option><option data-i18n="d6_t">Bureau d'études</option></select>
         </div>
-        <div class="form-field"><label data-i18n="f_msg">Message</label><textarea id="f_msg"></textarea></div>
-        <button type="submit" class="btn-primary" data-i18n="f_send">Envoyer la demande</button>
+        <div class="form-field"><label data-i18n="f_msg">Message</label><textarea id="f_msg" name="message"></textarea></div>
+        <button type="submit" class="btn-primary" id="f_submit_btn" data-i18n="f_send">Envoyer la demande</button>
+        <div id="f_status" class="note-box" style="display:none; margin-top:14px;"></div>
       </form>
       <div class="contact-info">
         <div class="row"><span class="icon-circle" data-icon="lieu" data-size="16"></span><div><b data-i18n="ci_addr">Adresse</b><span>Avenue Maluka N°3 et 5, C/Mont-Ngafula, Kinshasa, RD Congo</span></div></div>

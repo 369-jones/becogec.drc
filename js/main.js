@@ -71,14 +71,42 @@ let auto = setInterval(()=>setSlide((cur+1)%slides.length), 5500);
 document.querySelector('.carousel').addEventListener('mouseenter',()=>clearInterval(auto));
 document.querySelector('.carousel').addEventListener('mouseleave',()=>{auto=setInterval(()=>setSlide((cur+1)%slides.length), 5500);});
 
-/* contact form -> mailto fallback (no backend on this demo site) */
+/* contact form -> submits to Formspree (becogec23@gmail.com receives the messages) */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mljdavye";
 document.getElementById('contact-form').addEventListener('submit', function(e){
   e.preventDefault();
-  const lang = document.documentElement.lang;
-  const name=document.getElementById('f_name').value, email=document.getElementById('f_email').value;
-  const type=document.getElementById('f_type').value, msg=document.getElementById('f_msg').value;
-  const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nType de projet: ${type}\n\n${msg}`);
-  window.location.href = `mailto:becogec23@gmail.com?subject=${encodeURIComponent('Demande de devis - '+name)}&body=${body}`;
+  const form = e.target;
+  const btn = document.getElementById('f_submit_btn');
+  const status = document.getElementById('f_status');
+  const lang = document.documentElement.lang || 'fr';
+  const t = (k) => (i18n[lang] && i18n[lang][k]) || (i18n.fr && i18n.fr[k]) || k;
+
+  btn.disabled = true;
+  const originalLabel = btn.textContent;
+  btn.textContent = t('f_sending');
+  status.style.display = 'none';
+
+  fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) {
+      status.textContent = t('f_sent');
+      status.style.background = '#EAF7EE'; status.style.borderColor = '#BEE6C9'; status.style.color = '#1E6B33';
+      status.style.display = 'block';
+      form.reset();
+    } else {
+      throw new Error('Formspree error');
+    }
+  }).catch(() => {
+    status.textContent = t('f_error');
+    status.style.background = '#FDECEC'; status.style.borderColor = '#F3B9B9'; status.style.color = '#8A1F1F';
+    status.style.display = 'block';
+  }).finally(() => {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+  });
 });
 
 const i18n = {
@@ -131,6 +159,7 @@ const i18n = {
   trust1:"<b>ARSP</b> Entreprise enregistrée en sous-traitance", trust2:"<b>Agrément ITP</b> Bureau d'études, catégorie A",
   ctp_eyebrow:"Contact", ct_title:"Vous avez un projet ? Parlons-en.", ct_desc:"Construction, voirie, génie civil, aménagement ou étude — nous sommes à votre écoute.", ct_cta:"Demander un devis",
   f_name:"Nom complet", f_email:"Email", f_type:"Type de projet", f_msg:"Message", f_send:"Envoyer la demande",
+  f_sending:"Envoi en cours…", f_sent:"Merci, votre message a bien été envoyé. Nous vous répondrons rapidement.", f_error:"Une erreur est survenue. Merci de réessayer ou de nous appeler directement.",
   ci_addr:"Adresse", ci_tel:"Téléphone", ci_mail:"Email", ci_soc:"Réseaux sociaux",
   foot_tag:"Bureau d'Études, Construction & Génie Civil", foot_h1:"Contact", foot_h2:"Navigation", foot_rights:"Tous droits réservés.", foot_fict:"Site fictif de démonstration.", foot_build:"Concevoir. Construire. Réaliser."},
   en:{disclaimer:"⚠ Fictional showcase site, a demo project still in development — non-contractual information, not for real transactions.",
@@ -182,6 +211,7 @@ const i18n = {
   trust1:"<b>ARSP</b> Registered subcontracting company", trust2:"<b>ITP licence</b> Category-A design office",
   ctp_eyebrow:"Contact", ct_title:"Have a project? Let's talk.", ct_desc:"Construction, roads, civil engineering, site development or studies — we're listening.", ct_cta:"Request a quote",
   f_name:"Full name", f_email:"Email", f_type:"Project type", f_msg:"Message", f_send:"Send request",
+  f_sending:"Sending…", f_sent:"Thank you, your message has been sent. We'll get back to you shortly.", f_error:"Something went wrong. Please try again or call us directly.",
   ci_addr:"Address", ci_tel:"Phone", ci_mail:"Email", ci_soc:"Social media",
   foot_tag:"Design, Construction & Civil Engineering Office", foot_h1:"Contact", foot_h2:"Navigation", foot_rights:"All rights reserved.", foot_fict:"Fictional demo site.", foot_build:"Design. Build. Deliver."}
 };
