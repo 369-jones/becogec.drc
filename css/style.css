@@ -65,11 +65,12 @@ nav a:hover, nav a.current{color:var(--cyan);}
 .carousel{position:relative; height:min(72vh,560px); min-height:380px;}
 .slide{position:absolute; inset:0; opacity:0; transition:opacity .9s ease; display:flex; align-items:center;}
 .slide.active{opacity:1;}
-.slide .bg{position:absolute; inset:0; z-index:0;}
+.slide .bg{position:absolute; inset:0; z-index:0; overflow:hidden;}
 .slide:nth-child(1) .bg{background:linear-gradient(135deg,#0A2036,#1B4C7A 70%);}
 .slide:nth-child(2) .bg{background:linear-gradient(135deg,#0F2D4A,#12AFD1 120%);}
 .slide:nth-child(3) .bg{background:linear-gradient(135deg,#1B4C7A,#E8871E 140%);}
-.slide .bg::after{content:"";position:absolute; inset:0; background:linear-gradient(0deg,rgba(10,32,54,.55),rgba(10,32,54,.15));}
+.slide .bg img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+.slide .bg::after{content:"";position:absolute; inset:0; background:linear-gradient(0deg,rgba(10,32,54,.72),rgba(10,32,54,.38));}
 .slide .glyph{position:absolute; right:6%; top:50%; transform:translateY(-50%); opacity:.14; z-index:0; color:#fff;}
 .slide .glyph svg{width:min(38vw,340px); height:min(38vw,340px);}
 .slide-inner{position:relative; z-index:1; padding:0 28px; max-width:1180px; margin:0 auto; width:100%;}
@@ -145,6 +146,12 @@ h2.h2{font-size:clamp(1.5rem,3vw,2rem); margin-top:6px; max-width:640px;}
 .note-box{background:#FFF7EA; border:1px solid #F0D9AE; padding:16px 18px; font-size:.85rem; color:#6B4E15; margin-top:26px; border-radius:var(--radius);}
 @media(max-width:880px){.realis-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.realis-grid{grid-template-columns:1fr;}}
+
+.photo-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px;}
+.photo-grid figure{margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); aspect-ratio:4/3;}
+.photo-grid img{width:100%; height:100%; object-fit:cover; display:block;}
+@media(max-width:880px){.photo-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.photo-grid{grid-template-columns:1fr;}}
 
 .timeline{display:flex; overflow-x:auto; padding-bottom:6px; gap:2px;}
 .tstep{flex:1 0 190px; padding:20px 20px 20px 0; border-top:3px solid var(--steel);}
