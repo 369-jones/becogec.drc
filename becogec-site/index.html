@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BECOGEC — Bureau d'Études, Construction & Génie Civil</title>
+<link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans-variable.woff2">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- SITE FICTIF / PROJET DE DÉMONSTRATION EN COURS DE DÉVELOPPEMENT — informations non contractuelles, à ne pas utiliser pour des transactions réelles. -->
+
+<header>
+  <div class="topbar">
+    <button type="button" class="hamburger-btn" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="siteDrawer"><span class="ico" data-icon="menu" data-size="19"></span></button>
+    <div class="brand" data-nav="accueil"><span class="ico" data-icon="stats-bureau" data-size="20"></span>BECOGEC<small data-i18n="tagline_small">Construction & Génie Civil</small></div>
+    <nav>
+      <div class="navlinks">
+        <a data-page="accueil" data-i18n="navh">Accueil</a>
+        <a data-page="moyens" data-i18n="nav2">Location d'engins</a>
+        <a data-page="expertises" data-i18n="nav1">Expertises</a>
+        <a data-page="contact" data-i18n="nav4">Contact</a>
+        <div class="navdrop">
+          <button type="button" class="navdrop-btn" data-i18n="nav_more">Plus <span class="caret">▾</span></button>
+          <div class="navdrop-menu">
+            <a data-page="realisations" data-i18n="nav5">Réalisations</a>
+            <a data-page="produits" data-i18n="nav3">Produits</a>
+            <a data-page="partenaires" data-i18n="nav7">Partenaires</a>
+            <a data-page="actualites" data-i18n="nav6">Actualités</a>
+          </div>
+        </div>
+        <a class="cta-btn" data-nav="moyens" data-i18n="nav_cta">Louer un engin</a>
+      </div>
+      <div class="social">
+        <a href="https://wa.me/243821217029" target="_blank" rel="noopener" aria-label="WhatsApp" class="ic-wa"><span class="ico" data-icon="whatsapp" data-size="15"></span></a>
+        <a href="https://www.facebook.com/share/19UcqTzUCa/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="ic-fb"><span class="ico" data-icon="facebook" data-size="15"></span></a>
+        <a href="https://www.instagram.com/becogec?stkn=MWVrZWFvN2VrZmw0aQ==" target="_blank" rel="noopener" aria-label="Instagram" class="ic-ig"><span class="ico" data-icon="instagram" data-size="15"></span></a>
+        <a href="mailto:becogec@hotmail.com" aria-label="Email" class="ic-mail"><span class="ico" data-icon="email" data-size="15"></span></a>
+      </div>
+      <div class="langbtns">
+        <button data-lang="fr" class="active">FR</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="siteDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <span class="brand" style="font-size:1.05rem;"><span class="ico" data-icon="stats-bureau" data-size="18"></span>BECOGEC</span>
+    <button type="button" class="drawer-close" id="drawerClose" aria-label="Fermer le menu"><span class="ico" data-icon="close" data-size="14"></span></button>
+  </div>
+  <nav class="drawer-nav">
+    <a data-page="accueil" data-i18n="navh">Accueil</a>
+    <a data-page="moyens" data-i18n="nav2">Location d'engins</a>
+    <a data-page="expertises" data-i18n="nav1">Expertises</a>
+    <a data-page="realisations" data-i18n="nav5">Réalisations</a>
+    <a data-page="produits" data-i18n="nav3">Produits</a>
+    <a data-page="partenaires" data-i18n="nav7">Partenaires</a>
+    <a data-page="actualites" data-i18n="nav6">Actualités</a>
+    <a data-page="contact" data-i18n="nav4">Contact</a>
+  </nav>
+  <div class="drawer-sep"></div>
+  <p class="drawer-label" data-i18n="drawer_support">Support &amp; contact rapide</p>
+  <div class="drawer-support">
+    <a href="tel:+243821217029" class="drawer-item"><span class="icon-circle" data-icon="telephone" data-size="13"></span><span>+243 821 217 029</span></a>
+    <a href="https://wa.me/243821217029" target="_blank" rel="noopener" class="drawer-item"><span class="icon-circle" data-icon="whatsapp" data-size="13"></span><span>WhatsApp</span></a>
+    <a href="mailto:becogec@hotmail.com" class="drawer-item"><span class="icon-circle" data-icon="email" data-size="13"></span><span>becogec@hotmail.com</span></a>
+  </div>
+  <div class="drawer-sep"></div>
+  <div class="drawer-social">
+    <a href="https://www.facebook.com/share/19UcqTzUCa/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="ic-fb"><span class="ico" data-icon="facebook" data-size="15"></span></a>
+    <a href="https://www.instagram.com/becogec?stkn=MWVrZWFvN2VrZmw0aQ==" target="_blank" rel="noopener" aria-label="Instagram" class="ic-ig"><span class="ico" data-icon="instagram" data-size="15"></span></a>
+    <a href="https://wa.me/243821217029" target="_blank" rel="noopener" aria-label="WhatsApp" class="ic-wa"><span class="ico" data-icon="whatsapp" data-size="15"></span></a>
+    <a href="mailto:becogec@hotmail.com" aria-label="Email" class="ic-mail"><span class="ico" data-icon="email" data-size="15"></span></a>
+  </div>
+  <div class="drawer-lang langbtns">
+    <button data-lang="fr" class="active">FR</button>
+    <button data-lang="en">EN</button>
+  </div>
+</aside>
+
+<main>
+
+<!-- ACCUEIL -->
+<div class="page active" id="page-accueil">
+  <section class="hero" style="padding:0;">
+    <div class="carousel">
+      <div class="slide active"><div class="bg"><img src="images/hero-1.jpg" alt="Équipe BECOGEC sur un chantier"></div><div class="glyph" data-icon="stats-bureau"></div>
+        <div class="slide-inner"><h1 data-i18n="hero_title">Construire avec expertise. Exécuter avec rigueur. Livrer avec responsabilité.</h1>
+        <p data-i18n="hero_lead">BECOGEC est une entreprise congolaise de Bâtiment, Travaux Publics et Génie Civil, de l'étude à la réalisation d'ouvrages durables.</p>
+        <div class="ctas"><button class="btn-primary" data-nav="moyens" data-i18n="hero_cta1">Louer un engin</button><button class="btn-ghost" data-nav="contact" data-i18n="hero_cta2">Demander un devis</button></div></div>
+      </div>
+      <div class="slide"><div class="bg"><img src="images/hero-2.jpg" alt="Engin de terrassement sur chantier de route"></div><div class="glyph" data-icon="routes"></div>
+        <div class="slide-inner"><h1 data-i18n="s_r_t">Routes, ouvrages d'art et infrastructures</h1>
+        <p data-i18n="s_r_d">Un parc matériel propre — pelle, niveleuse, compacteur, camion-benne — pour exécuter sans dépendre de la sous-traitance.</p>
+        <div class="ctas"><button class="btn-primary" data-nav="moyens" data-i18n="s_r_cta">Voir nos équipements</button></div></div>
+      </div>
+      <div class="slide"><div class="bg"><img src="images/hero-3.jpg" alt="Ingénieurs BECOGEC étudiant un plan sur site"></div><div class="glyph" data-icon="bureau-etudes"></div>
+        <div class="slide-inner"><h1 data-i18n="s_b_t">Étude et exécution, une seule équipe</h1>
+        <p data-i18n="s_b_d">Un bureau d'études de catégorie A intégré, pour une continuité maîtrisée entre conception et chantier.</p>
+        <div class="ctas"><button class="btn-primary" data-nav="realisations" data-i18n="s_b_cta">Nos réalisations</button></div></div>
+      </div>
+      <div class="dots"></div>
+    </div>
+    <div class="hero-stats">
+      <div><span class="icon-circle on-dark" data-icon="stats-domaines" data-size="16"></span><span><b>6</b><span data-i18n="stat1">domaines d'intervention</span></span></div>
+      <div><span class="icon-circle on-dark" data-icon="stats-bureau" data-size="16"></span><span><b>A</b><span data-i18n="stat2">bureau d'études, catégorie A</span></span></div>
+      <div><span class="icon-circle on-dark" data-icon="stats-engins" data-size="16"></span><span><b>14+</b><span data-i18n="stat3">engins & équipements propres</span></span></div>
+      <div><span class="icon-circle on-dark" data-icon="stats-etapes" data-size="16"></span><span><b>7</b><span data-i18n="stat4">étapes de suivi de chantier</span></span></div>
+    </div>
+  </section>
+
+  <section id="expertises-preview">
+    <div class="wrap">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="exp_eyebrow">Nos domaines d'expertise</p><h2 class="h2" data-i18n="exp_title">De l'étude à la réalisation</h2></div>
+      <p data-i18n="exp_desc">BECOGEC intervient dans le bâtiment, les travaux publics, le génie civil et les infrastructures, au service des secteurs public et privé en RDC.</p></div>
+      <div class="grid" id="home-domain-grid"></div>
+    </div>
+  </section>
+
+  <section class="cta-band"><div class="wrap">
+    <div><h2 data-i18n="ct_title">Vous avez un projet ? Parlons-en.</h2><p data-i18n="ct_desc">Construction, voirie, génie civil, aménagement ou étude — nous sommes à votre écoute.</p></div>
+    <button class="btn-primary" data-nav="contact" data-i18n="ct_cta">Demander un devis</button>
+  </div></section>
+</div>
+
+<!-- EXPERTISES -->
+<div class="page" id="page-expertises">
+  <section><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" data-i18n="exp_eyebrow">Nos domaines d'expertise</p><h2 class="h2" data-i18n="exp_title">De l'étude à la réalisation</h2></div>
+    <p data-i18n="exp_desc">BECOGEC intervient dans le bâtiment, les travaux publics, le génie civil et les infrastructures, au service des secteurs public et privé en RDC.</p></div>
+    <div class="grid" id="expertises-grid"></div>
+  </div></section>
+</div>
+
+<!-- EXPERTISE DETAIL -->
+<div class="page" id="page-detail">
+  <section class="detail-hero"><div class="wrap">
+    <span class="detail-back" data-nav="expertises"><span class="ico icon-flip" data-icon="chevron" data-size="12"></span><span data-i18n="back">Retour aux expertises</span></span>
+    <span class="icon-tile on-dark" id="detail-icon"></span>
+    <h1 id="detail-title"></h1>
+    <p id="detail-desc"></p>
+  </div></section>
+  <section><div class="wrap">
+    <ul class="bullets" id="detail-bullets"></ul>
+  </div></section>
+</div>
+
+<!-- MOYENS / LOCATION D'ENGINS -->
+<div class="page" id="page-moyens">
+  <section class="band-dark"><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" style="color:var(--cyan);" data-i18n="moy_eyebrow">Location d'engins</p><h2 class="h2" data-i18n="moy_title">Nos machines disponibles à la location</h2></div>
+    <p data-i18n="moy_desc">BECOGEC met à disposition ses propres engins et équipements pour les chantiers de ses partenaires, en parallèle de ses travaux de construction et bureau d'études.</p></div>
+
+    <p class="eq-cat" data-i18n="eq_cat1">Terrassement &amp; transport</p>
+    <div class="eq-list">
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-pelle.jpg" alt="Pelle excavatrice BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e1_t">Pelle excavatrice</b><span data-i18n="e1_d">Caterpillar 320 D3 GC, sur chenilles — année 2023</span></div></div>
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-tractopelle.jpg" alt="Tractopelle BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e13_t">Tractopelle</b><span data-i18n="e13_d">Chargeuse-pelleteuse, pour terrassement et drainage</span></div></div>
+      <div class="eq-item"><span class="icon-circle on-dark" data-icon="niveleuse" data-size="18"></span><div><b data-i18n="e2_t">Niveleuse</b><span data-i18n="e2_d">Zoomlion PY190B — année 2007</span></div><span class="avail-badge on-dark" data-i18n="avail_yes">Disponible</span></div>
+      <div class="eq-item"><span class="icon-circle on-dark" data-icon="compacteur" data-size="18"></span><div><b data-i18n="e3_t">Compacteur</b><span data-i18n="e3_d">Caterpillar CB24B — année 2013</span></div><span class="avail-badge on-dark" data-i18n="avail_yes">Disponible</span></div>
+      <div class="eq-item"><span class="icon-circle on-dark" data-icon="camion-benne" data-size="18"></span><div><b data-i18n="e4_t">Camion-benne</b><span data-i18n="e4_d">Sinotruk Howo 6x4, 30 tonnes, 10 roues</span></div><span class="avail-badge on-dark" data-i18n="avail_yes">Disponible</span></div>
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-tricycles.jpg" alt="Tricycles de transport BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e9_t">Tricycles de transport</b><span data-i18n="e9_d">OMOTO, plus d'1 tonne de charge chacun (x2)</span></div></div>
+    </div>
+
+    <p class="eq-cat" data-i18n="eq_cat2">Production de matériaux</p>
+    <div class="eq-list">
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-concasseur.jpg" alt="Concasseur BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e5_t">Concasseur</b><span data-i18n="e5_d">Production de concassés 2/8 pour pavés</span></div></div>
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-paves.jpg" alt="Machine à pavés BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e7_t">Machine à pavés</b><span data-i18n="e7_d">Moteur de vibration intégré</span></div></div>
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-plaque.jpg" alt="Plaque vibrante BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e11_t">Plaque vibrante</b><span data-i18n="e11_d">Marque Subaru, compactage de petites surfaces</span></div></div>
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-betonniere.jpg" alt="Bétonnière BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e12_t">Bétonnière</b><span data-i18n="e12_d">Malaxage de béton sur chantier</span></div></div>
+    </div>
+
+    <p class="eq-cat" data-i18n="eq_cat3">Autonomie de chantier</p>
+    <div class="eq-list">
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-generateur.jpg" alt="Groupe électrogène BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e6_t">Groupe électrogène</b><span data-i18n="e6_d">6 KVA, marque Turbo Max, poste à souder intégré</span></div></div>
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-solaire.jpg" alt="Panneaux et pompe solaires BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e8_t">Panneaux &amp; pompes solaires</b><span data-i18n="e8_d">Autonomie en eau et énergie sur site</span></div></div>
+      <div class="eq-item has-photo"><div class="eq-photo"><img src="images/equip-echafaudage.jpg" alt="Échafaudages BECOGEC" loading="lazy"><span class="avail-badge" data-i18n="avail_yes">Disponible</span></div><div class="eq-body"><b data-i18n="e10_t">Échafaudages</b><span data-i18n="e10_d">Une vingtaine de modules disponibles</span></div></div>
+    </div>
+
+    <div class="note-box" data-i18n="eq_note">Statut mis à jour régulièrement. Pour confirmer la disponibilité d'un engin à une date précise, contactez-nous directement.</div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" data-i18n="vid_eyebrow">En action</p><h2 class="h2" data-i18n="vid_title">Nos engins sur le terrain</h2></div></div>
+    <div class="video-grid">
+      <video controls preload="none" poster="images/equip-pelle.jpg" playsinline><source src="videos/engin-2.mp4" type="video/mp4"></video>
+      <video controls preload="none" playsinline><source src="videos/engin-1.mp4" type="video/mp4"></video>
+      <video controls preload="none" playsinline><source src="videos/engin-3.mp4" type="video/mp4"></video>
+      <video controls preload="none" playsinline><source src="videos/engin-4.mp4" type="video/mp4"></video>
+      <video controls preload="none" poster="images/equip-tractopelle.jpg" playsinline><source src="videos/engin-5.mp4" type="video/mp4"></video>
+    </div>
+  </div></section>
+
+  <section class="cta-band"><div class="wrap">
+    <div><h2 data-i18n="eq_cta_title">Besoin d'un engin pour votre chantier ?</h2><p data-i18n="eq_cta_desc">Contactez-nous pour connaître les modalités et la durée de location.</p></div>
+    <button class="btn-primary" data-nav="contact" data-i18n="eq_cta_btn">Nous contacter</button>
+  </div></section>
+</div>
+
+<!-- REALISATIONS -->
+<div class="page" id="page-realisations">
+  <section><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" data-i18n="re_eyebrow">Réalisations</p><h2 class="h2" data-i18n="re_title">Types de projets que nous réalisons</h2></div>
+    <p data-i18n="re_desc">Un aperçu des catégories de chantiers couvertes par nos équipes.</p></div>
+    <div class="realis-grid">
+      <div class="realis"><div class="top" data-icon="batiment"></div><div class="body"><h3 data-i18n="d1_t">Bâtiment</h3><p data-i18n="re1">Résidentiel, administratif, scolaire, sanitaire, industriel.</p></div></div>
+      <div class="realis"><div class="top" data-icon="routes"></div><div class="body"><h3 data-i18n="d2_t">Routes &amp; Voiries</h3><p data-i18n="re2">Ouverture, réhabilitation, pavage, voiries urbaines.</p></div></div>
+      <div class="realis"><div class="top" data-icon="genie-civil"></div><div class="body"><h3 data-i18n="d3_t">Génie civil</h3><p data-i18n="re3">Ponts, dalots, murs de soutènement.</p></div></div>
+      <div class="realis"><div class="top" data-icon="hydraulique"></div><div class="body"><h3 data-i18n="d4_t">Hydraulique</h3><p data-i18n="re4">Réseaux, caniveaux, ouvrages de drainage.</p></div></div>
+      <div class="realis"><div class="top" data-icon="terrassement"></div><div class="body"><h3 data-i18n="d5_t">Terrassement</h3><p data-i18n="re5">Stabilisation et protection contre l'érosion.</p></div></div>
+      <div class="realis"><div class="top" data-icon="bureau-etudes"></div><div class="body"><h3 data-i18n="d6_t">Études</h3><p data-i18n="re6">Architecture, structures, hydraulique, environnement.</p></div></div>
+    </div>
+    <div class="note-box" data-i18n="re_note">Références de chantiers spécifiques (photos, localisation, client) à ajouter dès disponibilité.</div>
+    <div class="section-head" style="margin-top:44px;"><div><p class="eyebrow" data-i18n="re_gal_eyebrow">En images</p><h2 class="h2" data-i18n="re_gal_title">Sur le terrain</h2></div></div>
+    <div class="photo-grid">
+      <figure><img src="images/realis-1.jpg" alt="Ingénieur BECOGEC sur chantier" loading="lazy"></figure>
+      <figure><img src="images/realis-2.jpg" alt="Étude de plans BECOGEC" loading="lazy"></figure>
+      <figure><img src="images/realis-3.jpg" alt="Équipe BECOGEC en ferraillage et coffrage" loading="lazy"></figure>
+      <figure><img src="images/realis-4.jpg" alt="Étude de terrain BECOGEC en milieu naturel" loading="lazy"></figure>
+      <figure><img src="images/realis-5.jpg" alt="Reconnaissance de site par l'équipe BECOGEC" loading="lazy"></figure>
+    </div>
+  </div></section>
+</div>
+
+<!-- PRODUITS -->
+<div class="page" id="page-produits">
+  <section><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" data-i18n="pr_eyebrow">Nos produits</p><h2 class="h2" data-i18n="pr_title">Des matériaux pour construire durablement</h2></div>
+    <p data-i18n="pr_desc">Production propre de matériaux de construction, disponibles pour nos chantiers et pour la vente.</p></div>
+    <div class="prod-row">
+      <div class="prod"><span class="icon-tile amber" data-icon="concasses"></span><h3 data-i18n="p1_t">Concassés</h3><p data-i18n="p1_d">Granulats pour béton, voiries et aménagements.</p></div>
+      <div class="prod"><span class="icon-tile amber" data-icon="paves"></span><h3 data-i18n="p2_t">Pavés</h3><p data-i18n="p2_d">Pavés en béton pour voiries, parkings et espaces extérieurs.</p></div>
+      <div class="prod"><span class="icon-tile amber" data-icon="blocs"></span><h3 data-i18n="p3_t">Blocs autobloquants</h3><p data-i18n="p3_d">Blocs pour la construction et l'aménagement.</p></div>
+      <div class="prod"><span class="icon-tile amber" data-icon="moellons"></span><h3 data-i18n="p4_t">Moellons</h3><p data-i18n="p4_d">Matériaux rocheux pour différents ouvrages.</p></div>
+    </div>
+  </div></section>
+  <section style="padding-top:0"><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" data-i18n="ap_eyebrow">Notre approche</p><h2 class="h2" data-i18n="ap_title">Une méthode claire, des résultats concrets</h2></div></div>
+    <div class="overflow-x"><div class="timeline">
+      <div class="tstep"><div class="num-row"><span class="num">01</span><span class="ico" data-icon="analyser" data-size="16" style="color:var(--steel)"></span></div><h3 data-i18n="s1_t">Analyser</h3><p data-i18n="s1_d">Comprendre le projet, les besoins et les contraintes.</p></div>
+      <div class="tstep"><div class="num-row"><span class="num">02</span><span class="ico" data-icon="preparer" data-size="16" style="color:var(--steel)"></span></div><h3 data-i18n="s2_t">Préparer</h3><p data-i18n="s2_d">Planifier les travaux et mobiliser équipes et matériel.</p></div>
+      <div class="tstep"><div class="num-row"><span class="num">03</span><span class="ico" data-icon="installer" data-size="16" style="color:var(--steel)"></span></div><h3 data-i18n="s3_t">Installer</h3><p data-i18n="s3_d">Mettre en place le chantier et organiser les équipes.</p></div>
+      <div class="tstep"><div class="num-row"><span class="num">04</span><span class="ico" data-icon="executer" data-size="16" style="color:var(--steel)"></span></div><h3 data-i18n="s4_t">Exécuter</h3><p data-i18n="s4_d">Réaliser les travaux avec rigueur, selon les plans.</p></div>
+      <div class="tstep"><div class="num-row"><span class="num">05</span><span class="ico" data-icon="controler" data-size="16" style="color:var(--steel)"></span></div><h3 data-i18n="s5_t">Contrôler</h3><p data-i18n="s5_d">Assurer la qualité et suivre l'avancement du chantier.</p></div>
+      <div class="tstep"><div class="num-row"><span class="num">06</span><span class="ico" data-icon="livrer" data-size="16" style="color:var(--steel)"></span></div><h3 data-i18n="s6_t">Livrer</h3><p data-i18n="s6_d">Vérifications finales et remise de l'ouvrage au client.</p></div>
+    </div></div>
+  </div></section>
+  <section style="padding-top:0"><div class="wrap">
+    <div class="why-grid">
+      <div class="why-item"><span class="icon-circle" data-icon="expertise" data-size="17"></span><div><h3 data-i18n="w1_t">Une expertise technique éprouvée</h3><p data-i18n="w1_d">Une équipe d'ingénieurs et professionnels expérimentés dans différents domaines du génie civil en RDC.</p></div></div>
+      <div class="why-item"><span class="icon-circle" data-icon="capacite" data-size="17"></span><div><h3 data-i18n="w2_t">Une capacité d'exécution propre</h3><p data-i18n="w2_d">Un parc d'équipements propre, permettant une autonomie croissante sur les chantiers.</p></div></div>
+      <div class="why-item"><span class="icon-circle" data-icon="integree" data-size="17"></span><div><h3 data-i18n="w3_t">Une approche intégrée</h3><p data-i18n="w3_d">Un bureau d'études intégré facilite la coordination entre conception et exécution.</p></div></div>
+      <div class="why-item"><span class="icon-circle" data-icon="resultats" data-size="17"></span><div><h3 data-i18n="w4_t">Une organisation orientée résultats</h3><p data-i18n="w4_d">Notre objectif : mener chaque chantier à son terme, dans les conditions convenues.</p></div></div>
+    </div>
+  </div></section>
+  <div class="trust"><div class="wrap">
+    <span><span class="ico" data-icon="shield" data-size="16"></span><b>RCCM</b> KNG/RCCM/23-B-00988</span>
+    <span><span class="ico" data-icon="shield" data-size="16"></span><b>ID. NAT.</b> 01-F4200-N30489G</span>
+    <span><span class="ico" data-icon="shield" data-size="16"></span><span data-i18n="trust1"><b>ARSP</b> Entreprise enregistrée en sous-traitance</span></span>
+    <span><span class="ico" data-icon="shield" data-size="16"></span><span data-i18n="trust2"><b>Agrément ITP</b> Bureau d'études, catégorie A</span></span>
+  </div></div>
+</div>
+
+<!-- PARTENAIRES -->
+<div class="page" id="page-partenaires">
+  <section><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" data-i18n="pa_eyebrow">Partenaires</p><h2 class="h2" data-i18n="pa_title">Ils nous font confiance</h2></div>
+    <p data-i18n="pa_desc">BECOGEC construit des partenariats durables avec des clients, fournisseurs et institutions en RDC et à l'international.</p></div>
+    <div class="note-box" data-i18n="pa_empty">Nos partenaires seront présentés ici prochainement. Vous représentez une entreprise ou une institution intéressée par un partenariat avec BECOGEC ?</div>
+  </div></section>
+  <section class="cta-band"><div class="wrap">
+    <div><h2 data-i18n="pa_cta_title">Devenir partenaire de BECOGEC</h2><p data-i18n="pa_cta_desc">Contactez-nous pour explorer ensemble les opportunités de collaboration.</p></div>
+    <button class="btn-primary" data-nav="contact" data-i18n="pa_cta_btn">Nous contacter</button>
+  </div></section>
+</div>
+
+<!-- ACTUALITES -->
+<div class="page" id="page-actualites">
+  <section class="band-dark"><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" style="color:var(--cyan);" data-i18n="ads_eyebrow">Actualités</p><h2 class="h2" data-i18n="ads_title">Annonces &amp; opportunités</h2></div></div>
+    <div class="note-box" data-i18n="ads_empty">Nos actualités sont en cours de mise à jour. De nouvelles annonces seront publiées très bientôt — revenez nous voir !</div>
+  </div></section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <section><div class="wrap">
+    <div class="section-head"><div><p class="eyebrow" data-i18n="ctp_eyebrow">Contact</p><h2 class="h2" data-i18n="ct_title">Vous avez un projet ? Parlons-en.</h2></div></div>
+    <div class="contact-grid">
+      <form id="contact-form">
+        <div class="form-field"><label data-i18n="f_name">Nom complet</label><input required type="text" id="f_name" name="name"></div>
+        <div class="form-field"><label data-i18n="f_email">Email</label><input required type="email" id="f_email" name="email"></div>
+        <div class="form-field"><label data-i18n="f_type">Type de projet</label>
+          <select id="f_type" name="project_type"><option data-i18n="d1_t">Bâtiment</option><option data-i18n="d2_t">Routes & Voiries</option><option data-i18n="d3_t">Génie civil</option><option data-i18n="d4_t">Hydraulique & assainissement</option><option data-i18n="d5_t">Terrassement & érosion</option><option data-i18n="d6_t">Bureau d'études</option></select>
+        </div>
+        <div class="form-field"><label data-i18n="f_msg">Message</label><textarea id="f_msg" name="message"></textarea></div>
+        <button type="submit" class="btn-primary" id="f_submit_btn" data-i18n="f_send">Envoyer la demande</button>
+        <div id="f_status" class="note-box" style="display:none; margin-top:14px;"></div>
+      </form>
+      <div class="contact-info">
+        <div class="row"><span class="icon-circle" data-icon="lieu" data-size="16"></span><div><b data-i18n="ci_addr">Adresse</b><span>Avenue Maluka N°3 et 5, C/Mont-Ngafula, Kinshasa, RD Congo</span></div></div>
+        <div class="row"><span class="icon-circle" data-icon="telephone" data-size="16"></span><div><b data-i18n="ci_tel">Téléphone</b><span><a href="tel:+243821217029">+243 821 217 029</a></span></div></div>
+        <div class="row"><span class="icon-circle" data-icon="email" data-size="16"></span><div><b data-i18n="ci_mail">Email</b><span><a href="mailto:becogec@hotmail.com">becogec@hotmail.com</a></span></div></div>
+        <div class="row"><span class="icon-circle" data-icon="whatsapp" data-size="16"></span><div><b data-i18n="ci_soc">Réseaux sociaux</b><div class="foot-social" style="margin-top:8px;">
+          <a href="https://wa.me/243821217029" target="_blank" rel="noopener" aria-label="WhatsApp" class="ic-wa"><span class="ico" data-icon="whatsapp" data-size="15"></span></a>
+          <a href="https://www.facebook.com/share/19UcqTzUCa/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="ic-fb"><span class="ico" data-icon="facebook" data-size="15"></span></a>
+          <a href="https://www.instagram.com/becogec?stkn=MWVrZWFvN2VrZmw0aQ==" target="_blank" rel="noopener" aria-label="Instagram" class="ic-ig"><span class="ico" data-icon="instagram" data-size="15"></span></a>
+        </div></div></div>
+      </div>
+    </div>
+  </div></section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><h4>BECOGEC</h4><p data-i18n="foot_tag">Bureau d'Études, Construction & Génie Civil</p><p>Avenue Maluka N°3 et 5, C/Mont-Ngafula, Kinshasa, RD Congo</p>
+      <div class="foot-social">
+        <a href="https://wa.me/243821217029" target="_blank" rel="noopener" aria-label="WhatsApp" class="ic-wa"><span class="ico" data-icon="whatsapp" data-size="15"></span></a>
+        <a href="https://www.facebook.com/share/19UcqTzUCa/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="ic-fb"><span class="ico" data-icon="facebook" data-size="15"></span></a>
+        <a href="https://www.instagram.com/becogec?stkn=MWVrZWFvN2VrZmw0aQ==" target="_blank" rel="noopener" aria-label="Instagram" class="ic-ig"><span class="ico" data-icon="instagram" data-size="15"></span></a>
+        <a href="mailto:becogec@hotmail.com" aria-label="Email" class="ic-mail"><span class="ico" data-icon="email" data-size="15"></span></a>
+      </div></div>
+      <div><h4 data-i18n="foot_h1">Contact</h4><a href="tel:+243821217029">+243 821 217 029</a><a href="mailto:becogec@hotmail.com">becogec@hotmail.com</a></div>
+      <div><h4 data-i18n="foot_h2">Navigation</h4>
+        <a data-nav="moyens" data-i18n="nav2">Location d'engins</a><a data-nav="expertises" data-i18n="nav1">Expertises</a>
+        <a data-nav="realisations" data-i18n="nav5">Réalisations</a><a data-nav="produits" data-i18n="nav3">Produits</a><a data-nav="partenaires" data-i18n="nav7">Partenaires</a><a data-nav="actualites" data-i18n="nav6">Actualités</a><a data-nav="contact" data-i18n="nav4">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 BECOGEC. <span data-i18n="foot_rights">Tous droits réservés.</span></span><span data-i18n="foot_build">Concevoir. Construire. Réaliser.</span></div>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
