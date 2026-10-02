@@ -55,6 +55,31 @@ function go(page){
   document.querySelectorAll('nav a[data-page]').forEach(a=>a.classList.toggle('current', a.dataset.page===page));
   window.scrollTo({top:0,behavior:'auto'});
   location.hash = page;
+  closeDrawer();
+}
+
+/* hamburger menu / drawer — works at every screen size */
+const menuToggle = document.getElementById('menuToggle');
+const siteDrawer = document.getElementById('siteDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerCloseBtn = document.getElementById('drawerClose');
+function openDrawer(){
+  if(!siteDrawer) return;
+  siteDrawer.classList.add('open'); drawerOverlay.classList.add('open');
+  siteDrawer.setAttribute('aria-hidden','false'); menuToggle.setAttribute('aria-expanded','true');
+  document.body.classList.add('no-scroll');
+}
+function closeDrawer(){
+  if(!siteDrawer) return;
+  siteDrawer.classList.remove('open'); drawerOverlay.classList.remove('open');
+  siteDrawer.setAttribute('aria-hidden','true'); menuToggle.setAttribute('aria-expanded','false');
+  document.body.classList.remove('no-scroll');
+}
+if(menuToggle){
+  menuToggle.addEventListener('click', ()=>{ siteDrawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
+  drawerOverlay.addEventListener('click', closeDrawer);
+  drawerCloseBtn.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer(); });
 }
 window.addEventListener('hashchange', ()=>{ const p=location.hash.replace('#','')||'accueil'; if(document.getElementById('page-'+p)) go(p==='detail'?'detail':p); });
 
@@ -111,7 +136,12 @@ document.getElementById('contact-form').addEventListener('submit', function(e){
 
 const i18n = {
   fr:{disclaimer:"⚠ Site vitrine fictif, projet de démonstration en cours de développement — informations non contractuelles, à ne pas utiliser pour des transactions réelles.",
-  tagline_small:"Construction & Génie Civil", navh:"Accueil", nav1:"Expertises", nav2:"Location d'engins", nav3:"Produits", nav4:"Contact", nav5:"Réalisations", nav6:"Actualités", nav_more:"Plus", nav_cta:"Louer un engin",
+  tagline_small:"Construction & Génie Civil", navh:"Accueil", nav1:"Expertises", nav2:"Location d'engins", nav3:"Produits", nav4:"Contact", nav5:"Réalisations", nav6:"Actualités", nav7:"Partenaires", nav_more:"Plus", nav_cta:"Louer un engin",
+  drawer_support:"Support & contact rapide",
+  pa_eyebrow:"Partenaires", pa_title:"Ils nous font confiance",
+  pa_desc:"BECOGEC construit des partenariats durables avec des clients, fournisseurs et institutions en RDC et à l'international.",
+  pa_empty:"Nos partenaires seront présentés ici prochainement. Vous représentez une entreprise ou une institution intéressée par un partenariat avec BECOGEC ?",
+  pa_cta_title:"Devenir partenaire de BECOGEC", pa_cta_desc:"Contactez-nous pour explorer ensemble les opportunités de collaboration.", pa_cta_btn:"Nous contacter",
   hero_title:"Construire avec expertise. Exécuter avec rigueur. Livrer avec responsabilité.",
   hero_lead:"BECOGEC est une entreprise congolaise de Bâtiment, Travaux Publics et Génie Civil, de l'étude à la réalisation d'ouvrages durables.",
   hero_cta1:"Louer un engin", hero_cta2:"Demander un devis",
@@ -169,7 +199,12 @@ const i18n = {
   ci_addr:"Adresse", ci_tel:"Téléphone", ci_mail:"Email", ci_soc:"Réseaux sociaux",
   foot_tag:"Bureau d'Études, Construction & Génie Civil", foot_h1:"Contact", foot_h2:"Navigation", foot_rights:"Tous droits réservés.", foot_fict:"Site fictif de démonstration.", foot_build:"Concevoir. Construire. Réaliser."},
   en:{disclaimer:"⚠ Fictional showcase site, a demo project still in development — non-contractual information, not for real transactions.",
-  tagline_small:"Construction & Civil Engineering", navh:"Home", nav1:"Expertise", nav2:"Equipment Rental", nav3:"Products", nav4:"Contact", nav5:"Projects", nav6:"News", nav_more:"More", nav_cta:"Rent equipment",
+  tagline_small:"Construction & Civil Engineering", navh:"Home", nav1:"Expertise", nav2:"Equipment Rental", nav3:"Products", nav4:"Contact", nav5:"Projects", nav6:"News", nav7:"Partners", nav_more:"More", nav_cta:"Rent equipment",
+  drawer_support:"Support & quick contact",
+  pa_eyebrow:"Partners", pa_title:"Trusted by",
+  pa_desc:"BECOGEC builds lasting partnerships with clients, suppliers and institutions in DR Congo and internationally.",
+  pa_empty:"Our partners will be featured here soon. Does your company or institution want to explore a partnership with BECOGEC?",
+  pa_cta_title:"Become a BECOGEC partner", pa_cta_desc:"Contact us to explore collaboration opportunities together.", pa_cta_btn:"Contact us",
   hero_title:"Building with expertise. Executing with rigor. Delivering with responsibility.",
   hero_lead:"BECOGEC is a Congolese company in Building, Public Works and Civil Engineering, from design study through to delivery.",
   hero_cta1:"Rent equipment", hero_cta2:"Request a quote",
