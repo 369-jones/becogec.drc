@@ -119,6 +119,10 @@ h2.h2{font-size:clamp(1.5rem,3vw,2rem); margin-top:6px; max-width:640px;}
 .eq-item{border:1px solid #24425E; background:rgba(255,255,255,.02); padding:18px 20px; border-radius:var(--radius); display:flex; gap:14px; align-items:flex-start;}
 .eq-item b{display:block; color:#fff; font-size:.98rem; margin-bottom:4px;}
 .eq-item span{font-size:.84rem; color:#B9CBDB;}
+.eq-item.has-photo{padding:0; overflow:hidden; flex-direction:column; align-items:stretch;}
+.eq-item.has-photo .eq-photo{width:100%; aspect-ratio:4/3; overflow:hidden; background:#0F2638;}
+.eq-item.has-photo .eq-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+.eq-item.has-photo .eq-body{padding:14px 18px 18px;}
 @media(max-width:880px){.eq-list{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.eq-list{grid-template-columns:1fr;}}
 
